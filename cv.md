@@ -29,6 +29,8 @@ function fibSequence(num){
 }
 fibSequence(10)
 ```
+## Experience
+1C Program Senior Specialist
 
 ## Education
 Yerevan Brusov State University of Languages and Social Sciences (English Language and Literature), Master’s Degree
