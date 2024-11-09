@@ -36,6 +36,8 @@ Yerevan Brusov State University of Languages and Social Sciences (English Langua
 
 Yerevan State Linguistic University After V. Brusov (Translator, Interpreter), Bachelor’s Degree
 
+Armenian Code Academy – Advanced JavaScript
+
 ## Languages
 
 - Armenian (mother tongue)
