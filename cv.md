@@ -13,6 +13,9 @@ I'm an enthusiastic Junior Developer passionate about software development. Eage
 - **Languages**: JavaScript, HTML, CSS
 - **Frameworks**: React
 
+## Other Skills
+1C program 
+
 ## Code Example - Recursive function which receives  a number as arguments and returns the fibonacci sequence as array
 ```c
 function fibSequence(num){
