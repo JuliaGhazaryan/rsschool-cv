@@ -32,7 +32,143 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
- <script src="js.js"></script>
+ <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mainContent = document.getElementById('main-content');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const content = {
+       
+        skills: `
+            <h2 class="skills">IT Skills</h2>
+            <p class="skillsP">JavaScript, HTML, CSS, React, Redux Toolkit, Bootstrap, Tailwind CSS</p>
+            <h2 class="skills">Other Skills</h2>
+            <p class="skillsP">1C program (8.3 and 11 versions), Microsoft Office</p>
+            <h2 class="skills">Languages</h2>
+            <ul class="skillsUl">
+                <li>Armenian (mother tongue)</li>
+                <li>English (fluent)</li>
+                <li>Russian (fluent)</li>
+                <li>French (Pre-Intermediate)</li>
+            </ul>
+        `,
+        projects: `
+        <div class="project">
+            <a href="https://juliaghazaryan.github.io/Fetch/" target="_blank" class="prj">Countries</a><br/><br/>
+            <a href="https://github.com/JuliaGhazaryan/Restaurant_Menu_ACA_Final_Project" target="_blank" class="prj">Restaurant Menu</a><br/><br/>
+            <a href="https://juliaghazaryan.github.io/Carusel/" target="_blank" class="prj">Carousel</a><br/><br/>
+            <a href="https://juliaghazaryan.github.io/tetris/" target="_blank" class="prj">Tetris</a><br/><br/>
+            <a href="https://juliaghazaryan.github.io/Todo/" target="_blank" class="prj">ToDo List</a>
+        </div>
+    `,
+    codeExample:`
+    <div class="codeExample">
+<h2> Implement binary search. </h2>
+ 
+       <pre>
+function binarySearch(sortedArray, num) {
+    let start = 0;
+    let end = sortedArray.length - 1;
+
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+
+        if (sortedArray[mid] === num) {
+            return mid;
+        } else if (sortedArray[mid] < num) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+    }
+
+    return -1;
+}
+        </pre>
+    `,
+
+        education: `
+            <h2 class="edu">University</h2>
+            <p class="education">Yerevan Brusov State University of Languages and Social Sciences (English Language and Literature), Master’s Degree</p>
+            <p class="education">Yerevan State Linguistic University After V. Brusov (Translator, Interpreter), Bachelor’s Degree</p>
+            <h2 class="edu">Courses</h2>
+            <p class="education">Armenian Code Academy – Advanced JavaScript, 2022</p>
+        `,
+        work: `
+            <h3 class="workh">"LIA KAF" LLC</h3>
+            <p class="workP">1C accounting program specialist - September 2014 / present</p>
+        `,
+        contact: `
+            <h1>Contact Me</h1>
+            <div class="contact-info">
+                <div>
+                    <p>Phone:</p>
+                    <a href="tel:+37477XXXXXX">+37477 XxXxXx</a>
+                </div>
+                <div>
+                    <p>Email:</p>
+                    <a href="mailto:julli2488@gmail.com">julli2488@gmail.com</a>
+                </div>
+                <div>
+                    <p>Github:</p>
+                    <a href="https://github.com/JuliaGhazaryan" target="_blank">JuliaGhazaryan</a>
+                </div>
+                <div>
+                    <p>Address:</p>
+                    <p>Yerevan, Armenia</p>
+                </div>
+            </div>
+        `,
+    };
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = this.getAttribute('data-target');
+            mainContent.innerHTML = content[target];
+        });
+    });
+});
+
+//sphere
+
+const Texts = [
+    'HTML', 'CSS', 'JAVASCRIPT',
+    'REACT', "npm", "Git",
+    'SASS', "Github", "ES5/ES6", "JSON",
+    'NODEJS',  "Redux", "Bootstrap", "Tailwind", "TypeScript", "MUI"
+  ];
+  
+  let tagCloud;
+  let radius;
+  
+  function initTagCloud() {
+    radius = Math.min(window.innerWidth, window.innerHeight) / 2.5;
+    tagCloud = TagCloud('.Sphere', Texts, {
+      radius: radius,
+      maxSpeed: 'normal',
+      initSpeed: 'slow',
+      direction: 135,
+      keep: true
+    });
+  
+    const color = '#08fdd8';
+    document.querySelector('.Sphere').style.color = color;
+  }
+  
+  initTagCloud();
+  
+  window.addEventListener('resize', () => {
+    tagCloud.pause();
+    setTimeout(() => {
+      tagCloud.destroy();
+      initTagCloud();
+    }, 500);
+  })
+
+
+
+</script>
    
 
    
